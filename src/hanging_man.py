@@ -65,7 +65,7 @@ hanging = {
       {bg(88)} |   |    {attr("reset")}
       {bg(88)} |  \o/   {attr("reset")}
       {bg(88)} |   |    {attr("reset")}
-      {bg(88)} |        {attr("reset")}
+      {bg(88)} |  /     {attr("reset")}
       {bg(88)} |_______ {attr("reset")}
       {bg(88)}          {attr("reset")}
       2 turns left""",
@@ -75,7 +75,7 @@ hanging = {
       {bg(52)} |   |    {attr("reset")}
       {bg(52)} |  \o/   {attr("reset")}
       {bg(52)} |   |    {attr("reset")}
-      {bg(52)} |        {attr("reset")}
+      {bg(52)} |  / \   {attr("reset")}
       {bg(52)} |_______ {attr("reset")}
       {bg(52)}          {attr("reset")}
       Oh gosh, you're on your last chance...""",
@@ -83,9 +83,9 @@ hanging = {
    0:  f"""
       {bg(0)} ________ {attr("reset")}
       {bg(0)} |   |    {attr("reset")}
-      {bg(0)} |  \o/   {attr("reset")}
-      {bg(0)} |   |    {attr("reset")}
-      {bg(0)} |        {attr("reset")}
+      {bg(0)} |   o    {attr("reset")}
+      {bg(0)} |  /|\   {attr("reset")}
+      {bg(0)} |  / \   {attr("reset")}
       {bg(0)} |_______ {attr("reset")}
       {bg(0)}          {attr("reset")}
       Ba-bow, you lose (and so does our unfortunate man)."""

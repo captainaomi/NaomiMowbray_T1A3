@@ -1,13 +1,12 @@
+# potential_words = [
+#     "hello",
+#     "bye",
+#     "lamp",
+#     "mint"
+# ]
+
+
 potential_words = [
-    "hello",
-    "bye",
-    "lamp",
-    "mint"
-]
-
-
-{
-  "data": [
     "aback",
     "abaft",
     "abandoned",
@@ -2475,4 +2474,3 @@ potential_words = [
     "zoo",
     "zoom"
   ]
-}
