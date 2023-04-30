@@ -1,11 +1,3 @@
-# potential_words = [
-#     "hello",
-#     "bye",
-#     "lamp",
-#     "mint"
-# ]
-
-
 potential_words = [
     "aback",
     "abaft",

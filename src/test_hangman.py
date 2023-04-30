@@ -1,8 +1,8 @@
 import random
 import string
+from colored import fg, bg, attr
 from hanging_man import hanging
 from words import potential_words
-from colored import fg, bg, attr
 
 def hangman_game():
     # potential_words = [
