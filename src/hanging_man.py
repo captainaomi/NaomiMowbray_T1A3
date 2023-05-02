@@ -1,8 +1,13 @@
 from colored import fg, bg, attr
 
+# Note: This does look quite repetitive, but that's on purpose!
+# If I don't reset the color attribute every line, it will apply 
+# that color across the ENTIRE line, and ends up looking silly. 
+# By using {attr("reset")} every time, it creates a nice even block for my hanging man
+
 hanging = {  
    8: f"""
-      {bg(15)} ________ {attr("reset")}
+      {bg(15)} ________ {attr("reset")}  
       {bg(15)} |        {attr("reset")}
       {bg(15)} |        {attr("reset")}
       {bg(15)} |        {attr("reset")}
