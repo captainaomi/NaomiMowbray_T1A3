@@ -1,10 +1,10 @@
 import random
-import emoji
 from colored import fg, bg, attr
 from hanging_man import hanging
 # from words import potential_words
 
 def intro():
+    global name
     name = input("Helllllo there, what's your name? ")
     print(f"Cool {name}, let's play Python Hangman and save this fella!")
     print("_____________________________________________")
@@ -46,18 +46,20 @@ def hangman_game():
         elif guess in guessed:
             print(f"\nYou already tried {guess}, so can we try a different letter?")
         else:
-            print(f"\nCome on, {guess} isn't a letter, let's give that another go.")
+            print(f"\nCome on {name}, {guess} isn't a letter, let's give that another go.")
             
     if chances == 0:
-        print(f"""\nDaaaang, the word was {fg(196)}{mystery_word}{attr(0)}. 
+        print(f"""\nDaaaang {name}, the word was {fg(196)}{mystery_word}{attr(0)}. 
 Better luck next time!""")
     else:
-        print(f"""\nNice job, you legend!
+        print(f"""\nNice job {name}, you legend!
 The word was {fg(117)}{mystery_word}{attr(0)} - you saved the man!""")
+
 
 
 intro()
 hangman_game()
+
 # if __name__ == "__main__":
 #     intro()
 #     hangman_game()

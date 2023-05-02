@@ -1,9 +1,12 @@
+import emoji
 from colored import fg, bg, attr
+
 
 # Note: This does look quite repetitive, but that's on purpose!
 # If I don't reset the color attribute every line, it will apply 
 # that color across the ENTIRE line, and ends up looking silly. 
-# By using {attr("reset")} every time, it creates a nice even block for my hanging man
+# By setting the color at the beginning and then using {attr("reset")} 
+# at the end of every line, we get a nice even block every time!
 
 hanging = {  
    8: f"""
@@ -78,7 +81,7 @@ hanging = {
    1: f"""
       {bg(52)} ________ {attr("reset")}
       {bg(52)} |   |    {attr("reset")}
-      {bg(52)} |  \o/   {attr("reset")}
+      {bg(52)} |   o/   {attr("reset")}
       {bg(52)} |   |    {attr("reset")}
       {bg(52)} |  / \   {attr("reset")}
       {bg(52)} |_______ {attr("reset")}

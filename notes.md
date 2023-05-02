@@ -13,3 +13,5 @@ every other developer that wants to install this on their machine just have to t
 and every requirement to run this package will be installed on their machine
 
 how to pytest for things that aren't sums?
+
+
