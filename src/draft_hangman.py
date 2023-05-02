@@ -29,9 +29,8 @@ def intro(scores_file):
     wins = 0
     global losses
     losses = 0
-    print(f"Cool {name}, let's play Python Hangman and save this fella!")
     print("_____________________________________________")
-    with open(scores_file, "w") as scores:
+    with open(scores_file, "a") as scores:
         writer = csv.writer(scores)
         writer.writerow([name, wins, losses])
 
@@ -85,22 +84,34 @@ The word was {fg(117)}{mystery_word}{attr(0)} - you saved the man!""")
 def outcome(scores_file, chances, losses, wins):
     if chances == 0:
         losses += 1
-        with open(scores_file, "a") as scores:
+        with open(scores_file, "w") as scores:
             writer = csv.writer(scores)
             writer.writerow([name, wins, losses])
     else:
         wins += 1
-        with open(scores_file, "a") as scores:
+        with open(scores_file, "w") as scores:
             writer = csv.writer(scores)
             writer.writerow([name, wins, losses])
 
-# def play_again():
+def main():
+    while True:
+        play = input(f"Do you want to play Python Hangman and save this fella? (yes/no) ").upper()[0]
+        if play == "N":
+            print(f"No worries {name}, let's play later instead.")
+            break
+        elif play == "Y":
+            print(f"Righto {name}, let's do this!")
+            hangman_game()
+            outcome(scores_file, chances, losses, wins)
 
+        else:
+            print("Innnnteresting, that's not a yes OR no... Goodbye then!")
+            break
 
 intro(scores_file)
-hangman_game()
-outcome(scores_file, chances, losses, wins)
+main()
 
 # if __name__ == "__main__":
-#     intro()
-#     hangman_game()
+    # intro(scores_file)
+    # hangman_game()
+    # outcome(scores_file, chances, losses, wins)
