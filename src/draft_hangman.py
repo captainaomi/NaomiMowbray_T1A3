@@ -1,13 +1,34 @@
+import csv
 import random
 from colored import fg, bg, attr
 from hanging_man import hanging
+import __main__
+
 # from words import potential_words
 
-def intro():
+scores_file = "src/scores.csv"
+
+# Check if there's a scores file yet
+# NOTE: file_name (in video) = scores (in my code)
+try:
+    scores = open(scores_file, "r")
+    scores.close()
+    print("In try block")
+
+except FileNotFoundError:
+    scores = open(scores_file, "w")
+    scores.write("name,wins,losses")
+    scores.close
+    print("In except block")
+
+def intro(scores):
     global name
     name = input("Helllllo there, what's your name? ")
     print(f"Cool {name}, let's play Python Hangman and save this fella!")
     print("_____________________________________________")
+    with open(scores, "a") as scores_file:
+        writer = csv.writer(scores_file)
+        writer.writerow([{name}], ['if chances > 0'])
 
 def hangman_game():
     potential_words = [
@@ -16,6 +37,7 @@ def hangman_game():
         "lamp",
     ]
     mystery_word = random.choice(potential_words).upper()
+    global chances 
     chances = 9
     guessed = set()
     word_letters = set(mystery_word)
@@ -56,8 +78,10 @@ Better luck next time!""")
 The word was {fg(117)}{mystery_word}{attr(0)} - you saved the man!""")
 
 
+# def play_again():
 
-intro()
+
+intro(scores)
 hangman_game()
 
 # if __name__ == "__main__":
