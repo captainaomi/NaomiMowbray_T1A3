@@ -98,3 +98,5 @@ hanging = {
       {bg(0)}          {attr("reset")}
       Ba-bow, you lose (and so does our unfortunate man)."""
 }
+
+
