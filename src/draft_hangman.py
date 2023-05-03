@@ -103,10 +103,9 @@ def main():
             print(f"Righto {name}, let's do this!")
             hangman_game()
             outcome(file, chances, losses, wins)
-
         else:
-            print("Innnnteresting, that's not a yes OR no... Goodbye then!")
-            break
+            print("Innnnteresting, that's not a yes OR a no...")
+            
 
 intro(file)
 main()
