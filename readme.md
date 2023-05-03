@@ -11,34 +11,46 @@ For the **GitHub repository**, you can click here: https://github.com/captainaom
 
 <br>
 
-        ## R5 Identify any code style guide or styling conventions that the application will adhere to. 
-        ## Reference the chosen style guide appropriately.
+## R5 Identify any code style guide or styling conventions that the application will adhere to. 
+## Reference the chosen style guide appropriately.
 
-        PEP 8 is the typical style guide for Python Code, and simply works towards ensuring there's consistency across everyone's Python Code. 
+PEP 8 is the typical style guide for Python Code, and simply works towards ensuring there's consistency across everyone's Python Code. 
 
-        Different things that I had to be careful of and learn to be congruent with included points such as:
+Different things that I had to be careful of and learn to be congruent with included points such as:
 
-        - Limit all lines to a maximum of 79 characters, but for flowing long blocks of text with fewer structural restrictions (docstrings or comments), the line length should be limited to 72 characters
+- Limit all lines to a maximum of 79 characters, but for flowing long blocks of text with fewer structural restrictions (docstrings or comments), the line length should be limited to 72 characters
 
-        - Surround top-level function and class definitions with two blank lines, but Method definitions inside a class are surrounded by a single blank line
+- Surround top-level function and class definitions with two blank lines, but Method definitions inside a class are surrounded by a single blank line
 
-        - Imports should be grouped in the following order:
-            1. standard library imports
-            2. related third party imports
-            3. local application/library specific imports
+- Imports should be grouped in the following order:
+    1. standard library imports
+    2. related third party imports
+    3. local application/library specific imports
 
-        You can find *Kenneth Reitz'* PEP 8 style guide here: https://pep8.org/
+You can find *Kenneth Reitz'* PEP 8 style guide here: https://pep8.org/
 
-        <br>
+<br>
 
-        ## R6 Develop a list of features that will be included in the application. It must include:
-        ### - at least three features
-        ### - describe each feature
-        ## Note: Ensure that your features above allow you to demonstrate your understanding of the following language elemenst and concepts: 
-        ### - use of variables and the concept of variable scope
-        ### - loops and conditional control structures
-        ### - error handling
-        <br>
+## R6 Develop a list of features that will be included in the application. It must include:
+### - at least three features
+### - describe each feature
+## Note: Ensure that your features above allow you to demonstrate your understanding of the following language elements and concepts: 
+### - use of variables and the concept of variable scope
+### - loops and conditional control structures
+### - error handling
+        
+Python Hangman!
+
+Here, you can:
+- Give your name, and choose to play my Python version of Hangman
+    - Your name will be stored and referred back throughout the game so that you feel welcome and it's personalised
+    - This also ties in with the file handling, and keeping track of scores
+- Guess the letters in a given mystery word
+- Mystery word will be randomly selected from a very big list of words
+- Colours and a few sassy comments scattered throughout game to keep you entertained
+- 
+
+<br>
 
         ## R7 Develop an implementation plan which:
         ### - outlines how each feature will be implemented and a checklist of tasks for each feature
