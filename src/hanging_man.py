@@ -1,4 +1,3 @@
-import emoji
 from colored import fg, bg, attr
 
 

@@ -1,33 +1,35 @@
 import csv
 import random
+import string
 from colored import fg, bg, attr
 from hanging_man import hanging
 import __main__
-# from words import potential_words
+from words import potential_words
 
 file = "src/scores.csv"
-# wins = 0
-# losses = 0
-retrieved_scores = [""]
+wins = 0
+losses = 0
+retrieved = ""
 
 # Check if there's a scores file yet
 # NOTE: file_name (in video) = file (in my code)
-try:
-    scores = open(file, "r")
-    columns = ["Player Name", "Total Wins", "Total Losses"]
-    retrieved = csv.DictReader(scores, fieldnames = columns)
-    for row in retrieved:
-        print(row)
-    scores.close()
-    print(retrieved)
-    print("In try block")
 
-except FileNotFoundError:
-    scores = open(file, "w")
-    columns = ["Player Name", "Total Wins", "Total Losses"]
-    retrieved = csv.DictWriter(scores, fieldnames = columns)
-    scores.close()
-    print("In except block")
+# try:
+#     scores = open(file, "r")
+#     columns = ["Player Name", "Total Wins", "Total Losses"]
+#     retrieved = csv.DictReader(scores, fieldnames = columns)
+#     for row in retrieved:
+#         print(row)
+#     scores.close()
+#     print(retrieved)
+#     print("In try block")
+
+# except FileNotFoundError:
+#     scores = open(file, "w")
+#     columns = ["Player Name", "Total Wins", "Total Losses"]
+#     retrieved = csv.DictWriter(scores, fieldnames = columns)
+#     scores.close()
+#     print("In except block")
 
 
 def intro(file, retrieved):
@@ -39,28 +41,34 @@ def intro(file, retrieved):
     losses = 0
     
     print("_____________________________________________")
-    with open(file, "a", newline="") as scores:
-        columns = ["Player Name", "Total Wins", "Total Losses"]
-        retrieved = csv.DictWriter(scores, fieldnames = columns)
-        retrieved.writeheader()
-        if retrieved(name) != name:
-            retrieved.writerow(
-                {"Player Name": name, "Total Wins": wins, "Total Losses": losses})
-        else:
-            scores.close()
+    # with open(file, "a", newline="") as scores:
+    #     columns = ["Player Name", "Total Wins", "Total Losses"]
+    #     retrieved = csv.DictWriter(scores, fieldnames = columns)
+    #     retrieved.writeheader()
+    #     for row in retrieved:
+    #         if retrieved() != name:
+    #             retrieved.writerow({name, wins, losses})
+    #         else:
+    #             scores.close()
 
 
-def hangman_game():
+def choose_mystery_word():
     potential_words = [
         "hello",
         "bye",
         "lamp",
-    ]
+    ] # These were used while building and testing the teminal application
+     
+    global mystery_word
     mystery_word = random.choice(potential_words).upper()
+    global word_letters
+    word_letters = set(mystery_word)
+
+
+def hangman_game(mystery_word, word_letters):
     global chances 
     chances = 9
     guessed = set()
-    word_letters = set(mystery_word)
     letters = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 
     while len(word_letters) > 0 and chances > 0:
@@ -90,6 +98,9 @@ def hangman_game():
         else:
             print(f"\nCome on {name}, {guess} isn't a letter, let's give that another go.")
             
+
+
+def did_he_die(chances):
     if chances == 0:
         print(f"""\nDaaaang {name}, the word was {fg(196)}{mystery_word}{attr(0)}. 
 Better luck next time!""")
@@ -98,30 +109,28 @@ Better luck next time!""")
 The word was {fg(117)}{mystery_word}{attr(0)} - you saved the man!""")
 
 
-def outcome(file, chances, losses, wins):
+def outcome(chances, losses, wins):
     if chances == 0:
         losses += 1
-        with open(file, "w", newline="") as scores:
-            columns = ["Player Name", "Total Wins", "Total Losses"]
-            retrieved = csv.DictWriter(scores, fieldnames = columns)
-            retrieved.writeheader()
-        if retrieved(name) == name:
-            retrieved.writerow(
-                {"Player Name": name, "Total Wins": wins, "Total Losses": losses})
-        else:
-            scores.close()
+        # with open(file, "w", newline="") as scores:
+        #     columns = ["Player Name", "Total Wins", "Total Losses"]
+        #     retrieved = csv.DictWriter(scores, fieldnames = columns)
+        #     retrieved.writeheader()
+        # if retrieved(name) == name:
+        #     retrieved.writerow({name, wins, losses})
+        # else:
+        #     scores.close()
 
     else:
         wins += 1
-        with open(file, "w", newline="") as scores:
-            columns = ["Player Name", "Total Wins", "Total Losses"]
-            retrieved = csv.DictWriter(scores, fieldnames = columns)
-            retrieved.writeheader()
-        if retrieved(name) == name:
-            retrieved.writerow(
-                {"Player Name": name, "Total Wins": wins, "Total Losses": losses})
-        else:
-            scores.close()
+        # with open(file, "w", newline="") as scores:
+        #     columns = ["Player Name", "Total Wins", "Total Losses"]
+        #     retrieved = csv.DictWriter(scores, fieldnames = columns)
+        #     retrieved.writeheader()
+        # if retrieved(name) == name:
+        #     retrieved.writerow({name, wins, losses})
+        # else:
+        #     scores.close()
 
 
 def main():
@@ -132,13 +141,15 @@ def main():
             break
         elif play == "Y":
             print(f"Righto {name}, let's do this!")
-            hangman_game()
-            outcome(file, chances, losses, wins)
+            choose_mystery_word()
+            hangman_game(mystery_word, word_letters)
+            did_he_die(chances)
+            outcome(chances, losses, wins)
         else:
             print("Innnnteresting, that's not a yes OR a no...")
             
 
-intro(file)
+intro(file, retrieved)
 main()
 
 # if __name__ == "__main__":

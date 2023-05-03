@@ -1,3 +1,10 @@
+# potential_words = [
+#     "hello",
+#     "bye",
+#     "lamp",
+#   ] # These were used while building and testing the teminal application
+
+
 potential_words = [
     "aback",
     "abaft",
