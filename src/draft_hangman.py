@@ -1,6 +1,6 @@
 import csv
 import random
-import string
+import emoji
 from colored import fg, bg, attr
 from hanging_man import hanging
 import __main__
@@ -34,7 +34,7 @@ retrieved = ""
 
 def intro(file, retrieved):
     global name
-    name = input("Helllllo there, what's your name? ")
+    name = input(emoji.emojize("Helllllo there :clown_face: What's your name? "))
     global wins 
     wins = 0
     global losses
@@ -96,17 +96,17 @@ def hangman_game(mystery_word, word_letters):
         elif guess in guessed:
             print(f"\nYou already tried {guess}, so can we try a different letter?")
         else:
-            print(f"\nCome on {name}, {guess} isn't a letter, let's give that another go.")
+            print(emoji.emojize(f"\nCome on {name}, {guess} isn't a letter :woozy_face: Let's give that another go."))
             
 
 
 def did_he_die(chances):
     if chances == 0:
-        print(f"""\nDaaaang {name}, the word was {fg(196)}{mystery_word}{attr(0)}. 
-Better luck next time!""")
+        print(emoji.emojize(f"""\nDaaaang {name}, the word was {fg(196)}{mystery_word}{attr(0)}. 
+Better luck next time! :crossed_fingers:"""))
     else:
-        print(f"""\nNice job {name}, you legend!
-The word was {fg(117)}{mystery_word}{attr(0)} - you saved the man!""")
+        print(emoji.emojize(f"""\nNice job {name}, you legend! :partying_face:
+The word was {fg(117)}{mystery_word}{attr(0)} - you saved the man!"""))
 
 
 def outcome(chances, losses, wins):
@@ -137,7 +137,7 @@ def main():
     while True:
         play = input(f"Do you want to play Python Hangman and save this fella? (yes/no) ").upper()[0]
         if play == "N":
-            print(f"No worries {name}, let's play later instead.")
+            print(emoji.emojize(f"No worries {name}, let's play later instead :waving_hand:"))
             break
         elif play == "Y":
             print(f"Righto {name}, let's do this!")
@@ -146,7 +146,7 @@ def main():
             did_he_die(chances)
             outcome(chances, losses, wins)
         else:
-            print("Innnnteresting, that's not a yes OR a no...")
+            print(emoji.emojize("Innnnteresting, that's not a yes OR a no... :thinking_face:"))
             
 
 intro(file, retrieved)
@@ -156,4 +156,3 @@ main()
     # intro(scores_file)
     # hangman_game()
     # outcome(scores_file, chances, losses, wins)
-    
