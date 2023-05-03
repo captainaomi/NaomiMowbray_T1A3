@@ -41,25 +41,35 @@ You can find *Kenneth Reitz'* PEP 8 style guide here: https://pep8.org/
         
 Python Hangman!
 
-Here, you can:
+Different features include:
 - Give your name, and choose to play my Python version of Hangman
     - Your name will be stored and referred back throughout the game so that you feel welcome and it's personalised
     - This also ties in with the file handling, and keeping track of scores
 - Guess the letters in a given mystery word
-- Mystery word will be randomly selected from a very big list of words
+    - Kiiiinda self explanatory. 
+    - `if/else` statements ensure that only alphabetical characters are used, which also negates possible errors thrown for numbers or symbols that a player might attempt to guess
+- Mystery word will be randomly selected from a very big list of words, because that's how you play Hangman!
+    - Letters will show as underscores if they haven't yet been guessed
+    - Once correctly guessed, each correct letter will show in place of the underscore
+- Chances, or lives, or 'how many more letters can you try until this guy is a goner?'
+    - Nine is a good number, so I went with that. Keeps some pressure on but not impossible
+    - Each wrong letter will deduct a chance
+    - Each wrong letter will also print out the newest hanging man picture, as he gets closer and closer to his death
+    - Numbers, symbols, multiple characters etc don't count as a wrong guess, and player is allowed to attempt that guess again with the same prompt to guess a letter
 - Colours and a few sassy comments scattered throughout game to keep you entertained
-- 
-
+    - The colours will be utilised for our mystery word and for the hanging man pictures, getting closer and closer to a black out when/if he dies
+    - The choice of colours from white through to red and then black are similar to Australia's fire danger chart... Red's bad, but black's catastrophic!
+`
 <br>
 
-        ## R7 Develop an implementation plan which:
-        ### - outlines how each feature will be implemented and a checklist of tasks for each feature
-        ### - prioritise the implementation of different features, or checklist items within a feature
-        ### - provide a dealine, duration or other time indicator for each feature or checklist/checklist item
-        ## Utilise a suitable project management platform to track this implementation plan
-        ## Provide screnshots/images and/or a reference to an accessible project management platform used to track this implementation plan
-        ## > Your checklists for each feature should have at least five items
-        <br>
+    ## R7 Develop an implementation plan which:
+    ### - outlines how each feature will be implemented and a checklist of tasks for each feature
+    ### - prioritise the implementation of different features, or checklist items within a feature
+    ### - provide a dealine, duration or other time indicator for each feature or checklist/checklist item
+    ## Utilise a suitable project management platform to track this implementation plan
+    ## Provide screnshots/images and/or a reference to an accessible project management platform used to track this implementation plan
+    ## > Your checklists for each feature should have at least five items
+    <br>
 
         ## R8 Design help documentation which includes a set of instructions which accurately describe how to use and install the application
         ## You must include:
