@@ -5,24 +5,24 @@ from hanging_man import hanging
 import __main__
 # from words import potential_words
 
-scores_file = "src/scores.csv"
+file = "src/scores.csv"
 wins = 0
 losses = 0
 
 # Check if there's a scores file yet
-# NOTE: file_name (in video) = scores (in my code)
+# NOTE: file_name (in video) = file (in my code)
 try:
-    scores = open(scores_file, "r")
+    scores = open(file, "r")
     scores.close()
     print("In try block")
 
 except FileNotFoundError:
-    scores = open(scores_file, "w")
+    scores = open(file, "w")
     scores.write("name,wins,losses\n")
     scores.close
     print("In except block")
 
-def intro(scores_file):
+def intro(file):
     global name
     name = input("Helllllo there, what's your name? ")
     global wins 
@@ -30,7 +30,7 @@ def intro(scores_file):
     global losses
     losses = 0
     print("_____________________________________________")
-    with open(scores_file, "a") as scores:
+    with open(file, "a") as scores:
         writer = csv.writer(scores)
         writer.writerow([name, wins, losses])
 
@@ -81,15 +81,15 @@ Better luck next time!""")
         print(f"""\nNice job {name}, you legend!
 The word was {fg(117)}{mystery_word}{attr(0)} - you saved the man!""")
 
-def outcome(scores_file, chances, losses, wins):
+def outcome(file, chances, losses, wins):
     if chances == 0:
         losses += 1
-        with open(scores_file, "w") as scores:
+        with open(file, "w") as scores:
             writer = csv.writer(scores)
             writer.writerow([name, wins, losses])
     else:
         wins += 1
-        with open(scores_file, "w") as scores:
+        with open(file, "w") as scores:
             writer = csv.writer(scores)
             writer.writerow([name, wins, losses])
 
@@ -102,13 +102,13 @@ def main():
         elif play == "Y":
             print(f"Righto {name}, let's do this!")
             hangman_game()
-            outcome(scores_file, chances, losses, wins)
+            outcome(file, chances, losses, wins)
 
         else:
             print("Innnnteresting, that's not a yes OR no... Goodbye then!")
             break
 
-intro(scores_file)
+intro(file)
 main()
 
 # if __name__ == "__main__":
