@@ -7,8 +7,6 @@ import __main__
 from words import potential_words
 
 file = "src/scores.csv"
-wins = 0
-losses = 0
 scorecard = ""
 
 # I've been trying:
@@ -22,21 +20,17 @@ scorecard = ""
 # scoresRetrieved[0]
 
 try:
-    scores = open(file, "r")
-    columns = ["Player Name", "Total Wins", "Total Losses"]
-    reader = csv.DictReader(scores)
-    # for row in scorecard:
-    #     print(row)
-    scores.close()
+    with open(file, "r") as scores:
+        reader = csv.DictReader(scores)
+        scorecard = list(reader)
     print("In try block")
 
 except FileNotFoundError:
-    scores = open(file, "w")
-    columns = ["Player Name", "Total Wins", "Total Losses"]
-    writer = csv.DictWriter(scores, fieldnames = columns)
-    writer.writeheader()
-    scores.close()
-    print("In except block")  
+    with open(file, "w", newline="") as scores:
+        columns = ["Player Name", "Total Wins", "Total Losses"]
+        writer = csv.DictWriter(scores, fieldnames=columns)
+        writer.writeheader()
+    print("In except block")
 
 
 def intro(file, scorecard):
@@ -51,17 +45,24 @@ def intro(file, scorecard):
     
     with open(file, newline="") as scores:
         columns = ["Player Name", "Total Wins", "Total Losses"]
-        reader = csv.DictReader(scores, fieldnames = columns)
+        reader = csv.DictReader(scores, fieldnames=columns)
         scorecard = list(reader)
+
         return_player = False
         for row in scorecard:
-            if name == row["name"]:
+            if row["Player Name"] == name:
                 return_player = True
+                break
+
         if not return_player:
             new_player = {"Player Name": name, "Total Wins": wins, "Total Losses": losses}
             scorecard.append(new_player)
 
-
+        with open(file, "w", newline="") as scores:
+            columns = ["Player Name", "Total Wins", "Total Losses"]
+            writer = csv.DictWriter(scores, fieldnames=columns)
+            writer.writerows(scorecard)
+    
         #     print(row.keys())
         # writer = csv.DictWriter(scores, fieldnames = columns)
         # writer.writeheader()
@@ -112,7 +113,6 @@ def hangman_game(mystery_word, word_letters):
         print("When you make a guess, it'll show here: ", " ".join(guessed))
         guess = input("What letter do you want to try? ").upper()
 
-
         if guess in letters - guessed: 
         #ie. still in alphabet, minus the ones we've tried
             guessed.add(guess)
@@ -145,26 +145,36 @@ The word was {fg(117)}{mystery_word}{attr(0)} - you saved the man!"""))
 
 def outcome(chances, losses, wins):
     if chances == 0:
-        losses += 1
-        # with open(file, "w", newline="") as scores:
-        #     columns = ["Player Name", "Total Wins", "Total Losses"]
-        #     scorecard = csv.DictWriter(scores, fieldnames = columns)
-        #     scorecard.writeheader()
-        # if scorecard(name) == name:
-        #     scorecard.writerow({name, wins, losses})
-        # else:
-        #     scores.close()
+        with open(file, "r") as scores:
+            reader = csv.DictReader(scores)
+            scorecard = list(reader)
 
-    else:
-        wins += 1
-        # with open(file, "w", newline="") as scores:
-        #     columns = ["Player Name", "Total Wins", "Total Losses"]
-        #     scorecard = csv.DictWriter(scores, fieldnames = columns)
-        #     scorecard.writeheader()
-        # if scorecard(name) == name:
-        #     scorecard.writerow({name, wins, losses})
-        # else:
-        #     scores.close()
+        for row in scorecard:
+            if row["Player Name"] == name:
+                row["Total Losses"] = str(int(row["Total Losses"]) + 1)
+
+        with open(file, "w", newline="") as scores:
+            columns = ["Player Name", "Total Wins", "Total Losses"]
+            writer = csv.DictWriter(scores, fieldnames=columns)
+            writer.writerows(scorecard)
+        print(f"You have {losses} losses and {wins} wins. Good game, {name}!")
+    
+    else: # You won!
+        with open(file, "r") as scores:
+            reader = csv.DictReader(scores)
+            scorecard = list(reader)
+
+        for row in scorecard:
+            if row["Player Name"] == name:
+                row["Total Wins"] = str(int(row["Total Wins"]) + 1)
+
+        with open(file, "w", newline="") as scores:
+            columns = ["Player Name", "Total Wins", "Total Losses"]
+            writer = csv.DictWriter(scores, fieldnames=columns)
+            writer.writeheader()
+            writer.writerows(scorecard)
+        print(f"You have {losses} losses and {wins} wins. Well done, {name}!")
+
 
 
 def main():
@@ -191,6 +201,5 @@ intro(file, scorecard)
 main()
 
 # if __name__ == "__main__":
-    # intro(scores_file)
-    # hangman_game()
-    # outcome(scores_file, chances, losses, wins)
+    # intro(file, scorecard)
+    # main()
