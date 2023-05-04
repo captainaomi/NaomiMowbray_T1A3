@@ -9,7 +9,7 @@ from words import potential_words
 file = "src/scores.csv"
 wins = 0
 losses = 0
-retrieved = ""
+scorecard = ""
 
 # I've been trying:
 # if (name != row[0]) and variations of this but keep getting DictWriter is not iterable or callable
@@ -25,23 +25,23 @@ retrieved = ""
 try:
     scores = open(file, "r")
     columns = ["Player Name", "Total Wins", "Total Losses"]
-    retrieved = csv.DictReader(scores, fieldnames = columns)
-    for row in retrieved:
+    reader = csv.DictReader(scores)
+    for row in reader:
         print(row)
     scores.close()
-    print(retrieved)
+    print(reader)
     print("In try block")
 
 except FileNotFoundError:
     scores = open(file, "w")
     columns = ["Player Name", "Total Wins", "Total Losses"]
-    retrieved = csv.DictWriter(scores, fieldnames = columns)
-    retrieved.writeheader()
+    writer = csv.DictWriter(scores, fieldnames = columns)
+    writer.writeheader()
     scores.close()
     print("In except block")  
 
 
-def intro(file, retrieved):
+def intro(file, scorecard):
     global name
     name = input(emoji.emojize(
         "Helllllo there :clown_face: What's your name? "))
@@ -51,15 +51,16 @@ def intro(file, retrieved):
     losses = 0
     
     print("_____________________________________________")
-    # with open(file, "a", newline="") as scores:
-    #     columns = ["Player Name", "Total Wins", "Total Losses"]
-    #     retrieved = csv.DictWriter(scores, fieldnames = columns)
-    #     retrieved.writeheader()
-    #     for row in retrieved:
-    #         if retrieved() != name:
-    #             retrieved.writerow({name, wins, losses})
-    #         else:
-    #             scores.close()
+    with open(file, "w", newline="") as scores:
+        columns = ["Player Name", "Total Wins", "Total Losses"]
+        writer = csv.DictWriter(scores, fieldnames = columns)
+        writer.writeheader()
+        writer.writerow({"Player Name": name, "Total Wins": wins, "Total Losses": losses})
+
+        # for row in scorecard:
+        #     if (name != row[0]):
+        #     else:
+        #         scores.close()
 
 
 def choose_mystery_word():
@@ -130,10 +131,10 @@ def outcome(chances, losses, wins):
         losses += 1
         # with open(file, "w", newline="") as scores:
         #     columns = ["Player Name", "Total Wins", "Total Losses"]
-        #     retrieved = csv.DictWriter(scores, fieldnames = columns)
-        #     retrieved.writeheader()
-        # if retrieved(name) == name:
-        #     retrieved.writerow({name, wins, losses})
+        #     scorecard = csv.DictWriter(scores, fieldnames = columns)
+        #     scorecard.writeheader()
+        # if scorecard(name) == name:
+        #     scorecard.writerow({name, wins, losses})
         # else:
         #     scores.close()
 
@@ -141,10 +142,10 @@ def outcome(chances, losses, wins):
         wins += 1
         # with open(file, "w", newline="") as scores:
         #     columns = ["Player Name", "Total Wins", "Total Losses"]
-        #     retrieved = csv.DictWriter(scores, fieldnames = columns)
-        #     retrieved.writeheader()
-        # if retrieved(name) == name:
-        #     retrieved.writerow({name, wins, losses})
+        #     scorecard = csv.DictWriter(scores, fieldnames = columns)
+        #     scorecard.writeheader()
+        # if scorecard(name) == name:
+        #     scorecard.writerow({name, wins, losses})
         # else:
         #     scores.close()
 
@@ -169,7 +170,7 @@ def main():
                 "Innnnteresting, that's not a yes OR a no... :thinking_face:"))
             
 
-intro(file, retrieved)
+intro(file, scorecard)
 main()
 
 # if __name__ == "__main__":
