@@ -28,7 +28,6 @@ try:
     # for row in scorecard:
     #     print(row)
     scores.close()
-    print(scorecard)
     print("In try block")
 
 except FileNotFoundError:
@@ -48,16 +47,24 @@ def intro(file, scorecard):
     wins = 0
     global losses
     losses = 0
-    
     print("_____________________________________________")
-    with open(file, "w+", newline="") as scores:
+    
+    with open(file, newline="") as scores:
         columns = ["Player Name", "Total Wins", "Total Losses"]
         reader = csv.DictReader(scores, fieldnames = columns)
         scorecard = list(reader)
+        return_player = False
         for row in scorecard:
-            print(row.keys())
-        writer = csv.DictWriter(scores, fieldnames = columns)
-        writer.writeheader()
+            if name == row["name"]:
+                return_player = True
+        if not return_player:
+            new_player = {"Player Name": name, "Total Wins": wins, "Total Losses": losses}
+            scorecard.append(new_player)
+
+
+        #     print(row.keys())
+        # writer = csv.DictWriter(scores, fieldnames = columns)
+        # writer.writeheader()
         # writer.writerow({"Player Name": name, "Total Wins": wins, "Total Losses": losses})
         # for row in scorecard:
         #     print(row)
