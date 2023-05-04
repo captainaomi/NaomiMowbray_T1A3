@@ -11,8 +11,9 @@ wins = 0
 losses = 0
 retrieved = ""
 
-# Check if there's a scores file yet
-# NOTE: file_name (in video) = file (in my code)
+# I've been trying:
+# if (name != row[0]) and variations of this but keep getting DictWriter is not iterable or callable
+
 
 # try:
 #     scores = open(file, "r")
