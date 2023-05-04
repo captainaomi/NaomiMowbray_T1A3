@@ -87,7 +87,7 @@ Now that it's created a nice little virtual environment for you to play in, you 
 When you press 'enter', you should be able to see (hangman-venv) at the beginning of your command line/terminal prompt, and you'll know you're in the right place!
 
 To make sure you've got the right requirements for the game, once you're in the venv, you just have to type: 
-    `pip install -r src/requirements.txt` 
+    `pip3 install -r src/requirements.txt` 
     `Enter`
 and every requirement to run our Python Hangman game will be installed for you!
 
