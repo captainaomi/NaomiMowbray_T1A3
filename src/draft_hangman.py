@@ -15,22 +15,30 @@ retrieved = ""
 # if (name != row[0]) and variations of this but keep getting DictWriter is not iterable or callable
 
 
-# try:
-#     scores = open(file, "r")
-#     columns = ["Player Name", "Total Wins", "Total Losses"]
-#     retrieved = csv.DictReader(scores, fieldnames = columns)
-#     for row in retrieved:
-#         print(row)
-#     scores.close()
-#     print(retrieved)
-#     print("In try block")
+# scoresRetrieved = csv.DictReader(someFile)
+# print(scoresRetrieved) <--- should be a list of objects
+# scoresRetrieved.append({name:someUserInputVariable, wins: wins, losses: losses})
+# []
+# [{name:someUserInputVariable, wins: wins, losses: losses}]
+# scoresRetrieved[0]
 
-# except FileNotFoundError:
-#     scores = open(file, "w")
-#     columns = ["Player Name", "Total Wins", "Total Losses"]
-#     retrieved = csv.DictWriter(scores, fieldnames = columns)
-#     scores.close()
-#     print("In except block")
+try:
+    scores = open(file, "r")
+    columns = ["Player Name", "Total Wins", "Total Losses"]
+    retrieved = csv.DictReader(scores, fieldnames = columns)
+    for row in retrieved:
+        print(row)
+    scores.close()
+    print(retrieved)
+    print("In try block")
+
+except FileNotFoundError:
+    scores = open(file, "w")
+    columns = ["Player Name", "Total Wins", "Total Losses"]
+    retrieved = csv.DictWriter(scores, fieldnames = columns)
+    retrieved.writeheader()
+    scores.close()
+    print("In except block")  
 
 
 def intro(file, retrieved):
