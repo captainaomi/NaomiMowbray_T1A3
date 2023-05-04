@@ -78,8 +78,23 @@ Different features include:
         ### - any system hardware requirements
         ### - how to use any command line arguements made for the application
 
-        First, we need to create a 'virtual environment'. To do this, we type the following in our terminal:
-            python3 -m venv src/hangman-venv
-        Now that it's created a nice little virtual environment for us to play in, we need to activate it (or 'move into' it). You can copy this text into the terminal:
-            source src/hangman-venv/bin/activate
-        When you press 'enter', you should be able to see (hangman-venv) at the beginning of your command line/terminal prompt, and you know you're in the right place!
+First, you'll need to create a 'virtual environment' (or venv). To do this, you can type the following in your terminal:
+    `python3 -m venv src/hangman-venv`
+    `Enter`
+Now that it's created a nice little virtual environment for you to play in, you need to activate it (or 'move into' it). You can copy this text into the terminal:
+    `source src/hangman-venv/bin/activate`
+    `Enter`
+When you press 'enter', you should be able to see (hangman-venv) at the beginning of your command line/terminal prompt, and you'll know you're in the right place!
+
+To make sure you've got the right requirements for the game, once you're in the venv, you just have to type: 
+    `pip install -r src/requirements.txt` 
+    `Enter`
+and every requirement to run our Python Hangman game will be installed for you!
+
+
+When you're done playing, you just need to type in `'no'` at the prompt to continue or stop playing the game, and then `deactivate + Enter` to leave your venv and go about your life!
+
+Again, when those cravings kick in and you want to play again, just go back and type in:
+    `source src/hangman-venv/bin/activate`
+    `Enter`
+Note: you won't have to install the requirements again, because they're still stored in your virtual enviornment and will be waiting for you every time you come play!
