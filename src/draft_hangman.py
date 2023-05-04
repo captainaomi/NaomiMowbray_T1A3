@@ -14,7 +14,6 @@ scorecard = ""
 # I've been trying:
 # if (name != row[0]) and variations of this but keep getting DictWriter is not iterable or callable
 
-
 # scoresRetrieved = csv.DictReader(someFile)
 # print(scoresRetrieved) <--- should be a list of objects
 # scoresRetrieved.append({name:someUserInputVariable, wins: wins, losses: losses})
@@ -26,10 +25,10 @@ try:
     scores = open(file, "r")
     columns = ["Player Name", "Total Wins", "Total Losses"]
     reader = csv.DictReader(scores)
-    for row in reader:
-        print(row)
+    # for row in scorecard:
+    #     print(row)
     scores.close()
-    print(reader)
+    print(scorecard)
     print("In try block")
 
 except FileNotFoundError:
@@ -51,11 +50,22 @@ def intro(file, scorecard):
     losses = 0
     
     print("_____________________________________________")
-    with open(file, "w", newline="") as scores:
+    with open(file, "w+", newline="") as scores:
         columns = ["Player Name", "Total Wins", "Total Losses"]
+        reader = csv.DictReader(scores, fieldnames = columns)
+        scorecard = list(reader)
+        for row in scorecard:
+            print(row.keys())
         writer = csv.DictWriter(scores, fieldnames = columns)
         writer.writeheader()
-        writer.writerow({"Player Name": name, "Total Wins": wins, "Total Losses": losses})
+        # writer.writerow({"Player Name": name, "Total Wins": wins, "Total Losses": losses})
+        # for row in scorecard:
+        #     print(row)
+        # print(scorecard.keys())
+            # if (name == row[name]):
+            #     writer.writerow({"Player Name": name, "Total Wins": wins, "Total Losses": losses})
+            # else:
+            #     scores.close()
 
         # for row in scorecard:
         #     if (name != row[0]):
