@@ -71,12 +71,17 @@ Different features include:
     ## > Your checklists for each feature should have at least five items
     <br>
 
-        ## R8 Design help documentation which includes a set of instructions which accurately describe how to use and install the application
-        ## You must include:
-        ### - steps to install the application
-        ### - any dependencies required by the application to operate
-        ### - any system hardware requirements
-        ### - how to use any command line arguements made for the application
+## R8 Design help documentation which includes a set of instructions which accurately describe how to use and install the application
+## You must include:
+### - steps to install the application
+### - any dependencies required by the application to operate
+### - any system hardware requirements
+### - how to use any command line arguements made for the application
+
+There's a long version, and there's a short version of how to play this game on your computer! 
+
+To make things nice and simple, instead of making oyu type a whole lot of commands in your terminal, I've created a file that will do it for you!
+
 
 First, you'll need to create a 'virtual environment' (or venv). To do this, you can type the following in your terminal:
     `python3 -m venv src/hangman-venv`
