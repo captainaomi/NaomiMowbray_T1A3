@@ -2,7 +2,7 @@
 
 if ! [[ -x "$(command -v python3)" ]]
 then
-    echo "Oops:
+    echo "Oops!
 This game is called Python Hangman, so you need Python to play!
 To install Python3, just go to https://www.python.org/downloads/" >&2
     exit 1

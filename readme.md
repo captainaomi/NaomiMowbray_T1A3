@@ -84,10 +84,26 @@ To make things nice and simple, instead of making you type a whole lot of comman
 
 First, we're going to check that you've got Python 3 installed - otherwise, you're going to have a hard time playing Python Hangman!
 
+I've got a file ready, you just need to be able to run it. Please type the following in your terminal to do so:
+
+``` py
+chmod +x src/run_a.sh
+./src/run_a.sh
+```
+If you get an `Oops!` message, click the link to upgrade or install Python 3, then come back and do this again.
+
+If you get a `You're good to go!` message, then you're good to go!
+
+Next, it's down to running our file and playing the game 😊
+
 To do this, you can type the following in your terminal:
-    `python3 -m venv src/hangman-venv`
-    `Enter`
-Now that it's created a nice little virtual environment for you to play in, you need to activate it (or 'move into' it). You can copy this text into the terminal:
+
+``` py
+chmod +x src/run_b.sh
+./src/run_b.sh
+```
+
+<!-- Now that it's created a nice little virtual environment for you to play in, you need to activate it (or 'move into' it). You can copy this text into the terminal:
     `source src/hangman-venv/bin/activate`
     `Enter`
 When you press 'enter', you should be able to see (hangman-venv) at the beginning of your command line/terminal prompt, and you'll know you're in the right place!
@@ -103,4 +119,4 @@ When you're done playing, you just need to type in `'no'` at the prompt to conti
 Again, when those cravings kick in and you want to play again, just go back and type in:
     `source src/hangman-venv/bin/activate`
     `Enter`
-Note: you won't have to install the requirements again, because they're still stored in your virtual enviornment and will be waiting for you every time you come play!
+Note: you won't have to install the requirements again, because they're still stored in your virtual enviornment and will be waiting for you every time you come play! -->
