@@ -80,10 +80,11 @@ Different features include:
 
 There's a long version, and there's a short version of how to play this game on your computer! 
 
-To make things nice and simple, instead of making oyu type a whole lot of commands in your terminal, I've created a file that will do it for you!
+To make things nice and simple, instead of making you type a whole lot of commands in your terminal, I've created a couple of files that will do it for you!
 
+First, we're going to check that you've got Python 3 installed - otherwise, you're going to have a hard time playing Python Hangman!
 
-First, you'll need to create a 'virtual environment' (or venv). To do this, you can type the following in your terminal:
+To do this, you can type the following in your terminal:
     `python3 -m venv src/hangman-venv`
     `Enter`
 Now that it's created a nice little virtual environment for you to play in, you need to activate it (or 'move into' it). You can copy this text into the terminal:
