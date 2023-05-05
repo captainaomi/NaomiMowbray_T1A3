@@ -71,14 +71,14 @@ Different features include:
     ## > Your checklists for each feature should have at least five items
     <br>
 
-## R8 Design help documentation which includes a set of instructions which accurately describe how to use and install the application
-## You must include:
-### - steps to install the application
-### - any dependencies required by the application to operate
-### - any system hardware requirements
-### - how to use any command line arguments made for the application
-
-
+### R8 Design help documentation which includes a set of instructions which accurately describe how to use and install the application
+### You must include:
+#### - steps to install the application
+#### - any dependencies required by the application to operate
+#### - any system hardware requirements
+#### - how to use any command line arguments made for the application
+<br>
+## Python Hangman Help 
 To play our Python Hangman game, there's a long list of commands and prompts and things we could do to eventually get your computer to let you play ... However, who chooses the long way on purpose?!
 
 I've created a couple of files that will do all it for you nice and simply - just follow the following steps:
@@ -88,6 +88,8 @@ I've created a couple of files that will do all it for you nice and simply - jus
 Firstly, you're gunna need a **computer** or a **laptop**, and an **integrated development environment** (or **IDE** for short), which is basically just a program that does fancy things with code that make you feel like you're in The Matrix! 
 
 I strongly recommend **Visual Studio Code**, which can be downloaded here: https://code.visualstudio.com
+
+If you already have an IDE that you prefer, then that's fine - please feel free to use that, and you should still be able to follow the below instructions to play.
 
 Now, these instructions are based on **the average Mac user**, but they should still work if you're on Windows or Linux. If you do have any issues, please just contact me at *codernaomi@coderacademy.com.au* and my team or I will get to troubleshooting right away for you!
 
@@ -101,7 +103,9 @@ For our **GitHub repository** (or the Matrix code that will let you play), click
 
 You should see a little green button that says **Code** - click that, and click on **Download Zip**.
 
-Our Python Hangman game will now be in your Downloads, so double click the zip file **NaomiMowbray_T1A3-main** to unzip it ;)
+Our Python Hangman game will now be in your Downloads, so double click the zip file **NaomiMowbray_T1A3-main** to unzip it 😉
+
+There'll be a few different files and what seem like random things in there - don't worry. Even if you don't understand it all, your computer will!
 
 Back in **Visual Studio Code**, we're going to do the following:
 1. Click open folder
@@ -133,9 +137,15 @@ chmod +x src/run_b.sh
 source src/run_b.sh
 ```
 
-### Game Rules
+### How to Actually Play
 
 Honestly, it's pretty simple and hopefully easy for everybody to follow along!
+
+And you should know Hangman basics... But if you don't, I got you:
+
+#### You have to guess a mystery word letter by letter, to save a man from a brutal hanging.
+
+#### Every wrong guess will bring him closer to his fate - it's up to you and your word guessing skills to save him!
 
 You'll be playing in the terminal, so keep your attention there. 
 
@@ -157,12 +167,37 @@ Let's say you went with `a`.
 
 The word will now show as `_ _ A _ A `
 
-Have a play, and figure out what happens if you win, lose, make an 'invalid' guess, and have fun!
+Have a play, and figure out what happens if you win, lose, make an 'invalid' guess, try to repeat a letter... Have fun!
+
+### When You're Done Playing
+
+When you're done saving the man (or not saving him, depending on how you go!), we can exit this game really easily. 
+
+The same *'Do you want to play?'* prompt will come up every time you either successfully guess a word or lose, so finish whatever word you're on to get some closure, and then choose `n` when you're ready for a break.
+
+And when you want to play again next time, that's pretty easy too!
+
+Just open up Visual Studio Code again, and open the same **NaomiMowbray_T1A3-main** folder.
+
+This time, however, all you need to type in the terminal is:
+
+```
+source src/run_b.sh
+```
+
+and you'll be able to keep your tally going from last time!
+
+Just remember to type your name *exactly* how you typed it the last time, to tally your score properly. If you used an alias or Captain Jack Sparrow or something and can't remember, don't stress - just follow the below instructions to look at the Score Card and jog your memory.
+
 
 ### Viewing Everyone's Score Tallys
 
-You'll be able to track everyone's scores, including the **Player Name**, their **Total Wins** and **Total Losses** in the file called **scores.csv**. You can either view this through Visual Studio Code, by clicking on the file called **scores.csv** under the **src folder** on the **Explorer Panel**, or by opening the file straight from the original file we unzipped to make this all happen! 
+You'll be able to track everyone's scores, including the **Player Name**, their **Total Wins** and **Total Losses** in the file called **scores.csv**. 
 
-If you don't remember where that is, that's okay. You can find on your computer at **Downloads**, then **NaomiMowbray_T1A3-main**, then go into the folder called **src** and you should see **scores.csv** there 😊
+You can either view this through **Visual Studio Code**, by clicking on the file called **scores.csv** under the **src folder** on the **Explorer Panel**, or by opening the file straight from the original folder we unzipped to make this all happen! 
+
+If you don't remember where that is, that's okay. 
+
+You should be able to find it on your computer at **Downloads**, then **NaomiMowbray_T1A3-main**, then go into the folder called **src**, and you'll see **scores.csv** there 😊
 
 ### Have fun and enjoy saving the day with my Python Hangman game!

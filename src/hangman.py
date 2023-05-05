@@ -3,36 +3,24 @@ import random
 import emoji
 from colored import fg, bg, attr
 from hanging_man import hanging
-import __main__
 from words import potential_words
 
 file = "src/scores.csv"
-wins = 0
-losses = 0
-retrieved = ""
+scorecard = ""
 
-# Check if there's a scores file yet
-# NOTE: file_name (in video) = file (in my code)
+try:
+    with open(file, "r") as scores:
+        reader = csv.DictReader(scores)
+        scorecard = list(reader)
 
-# try:
-#     scores = open(file, "r")
-#     columns = ["Player Name", "Total Wins", "Total Losses"]
-#     retrieved = csv.DictReader(scores, fieldnames = columns)
-#     for row in retrieved:
-#         print(row)
-#     scores.close()
-#     print(retrieved)
-#     print("In try block")
-
-# except FileNotFoundError:
-#     scores = open(file, "w")
-#     columns = ["Player Name", "Total Wins", "Total Losses"]
-#     retrieved = csv.DictWriter(scores, fieldnames = columns)
-#     scores.close()
-#     print("In except block")
+except FileNotFoundError:
+    with open(file, "w", newline="") as scores:
+        columns = ["Player Name", "Total Wins", "Total Losses"]
+        writer = csv.DictWriter(scores, fieldnames=columns)
+        writer.writeheader()
 
 
-def intro(file, retrieved):
+def intro(file, scorecard):
     global name
     name = input(emoji.emojize(
         "Helllllo there :clown_face: What's your name? "))
@@ -40,25 +28,35 @@ def intro(file, retrieved):
     wins = 0
     global losses
     losses = 0
-    
     print("_____________________________________________")
-    # with open(file, "a", newline="") as scores:
-    #     columns = ["Player Name", "Total Wins", "Total Losses"]
-    #     retrieved = csv.DictWriter(scores, fieldnames = columns)
-    #     retrieved.writeheader()
-    #     for row in retrieved:
-    #         if retrieved() != name:
-    #             retrieved.writerow({name, wins, losses})
-    #         else:
-    #             scores.close()
+    
+    with open(file, newline="") as scores:
+        columns = ["Player Name", "Total Wins", "Total Losses"]
+        reader = csv.DictReader(scores, fieldnames=columns)
+        scorecard = list(reader)
+
+        return_player = False
+        for row in scorecard:
+            if row["Player Name"] == name:
+                return_player = True
+                break
+
+        if not return_player:
+            new_player = {"Player Name": name, "Total Wins": wins, "Total Losses": losses}
+            scorecard.append(new_player)
+
+        with open(file, "w", newline="") as scores:
+            columns = ["Player Name", "Total Wins", "Total Losses"]
+            writer = csv.DictWriter(scores, fieldnames=columns)
+            writer.writerows(scorecard)
 
 
 def choose_mystery_word():
-    potential_words = [
-        "hello",
-        "bye",
-        "lamp",
-    ] # These were used while building and testing the teminal application
+    # potential_words = [
+    #     "hello",
+    #     "bye",
+    #     "lamp",
+    # ] # These were used while building and testing the teminal application
      
     global mystery_word
     mystery_word = random.choice(potential_words).upper()
@@ -85,7 +83,6 @@ def hangman_game(mystery_word, word_letters):
         print("When you make a guess, it'll show here: ", " ".join(guessed))
         guess = input("What letter do you want to try? ").upper()
 
-
         if guess in letters - guessed: 
         #ie. still in alphabet, minus the ones we've tried
             guessed.add(guess)
@@ -102,7 +99,6 @@ def hangman_game(mystery_word, word_letters):
             print(emoji.emojize(
                 f"""\nCome on {name}, {guess} isn't a letter :woozy_face:
 Let's give that another go..."""))
-            
 
 
 def did_he_die(chances):
@@ -118,26 +114,34 @@ The word was {fg(117)}{mystery_word}{attr(0)} - you saved the man!"""))
 
 def outcome(chances, losses, wins):
     if chances == 0:
-        losses += 1
-        # with open(file, "w", newline="") as scores:
-        #     columns = ["Player Name", "Total Wins", "Total Losses"]
-        #     retrieved = csv.DictWriter(scores, fieldnames = columns)
-        #     retrieved.writeheader()
-        # if retrieved(name) == name:
-        #     retrieved.writerow({name, wins, losses})
-        # else:
-        #     scores.close()
+        with open(file, "r") as scores:
+            reader = csv.DictReader(scores)
+            scorecard = list(reader)
 
-    else:
-        wins += 1
-        # with open(file, "w", newline="") as scores:
-        #     columns = ["Player Name", "Total Wins", "Total Losses"]
-        #     retrieved = csv.DictWriter(scores, fieldnames = columns)
-        #     retrieved.writeheader()
-        # if retrieved(name) == name:
-        #     retrieved.writerow({name, wins, losses})
-        # else:
-        #     scores.close()
+        for row in scorecard:
+            if row["Player Name"] == name:
+                row["Total Losses"] = str(int(row["Total Losses"]) + 1)
+
+        with open(file, "w", newline="") as scores:
+            columns = ["Player Name", "Total Wins", "Total Losses"]
+            writer = csv.DictWriter(scores, fieldnames=columns)
+            writer.writeheader()
+            writer.writerows(scorecard)
+    
+    else: # You won!
+        with open(file, "r") as scores:
+            reader = csv.DictReader(scores)
+            scorecard = list(reader)
+
+        for row in scorecard:
+            if row["Player Name"] == name:
+                row["Total Wins"] = str(int(row["Total Wins"]) + 1)
+
+        with open(file, "w", newline="") as scores:
+            columns = ["Player Name", "Total Wins", "Total Losses"]
+            writer = csv.DictWriter(scores, fieldnames=columns)
+            writer.writeheader()
+            writer.writerows(scorecard)
 
 
 def main():
@@ -160,10 +164,5 @@ def main():
                 "Innnnteresting, that's not a yes OR a no... :thinking_face:"))
             
 
-intro(file, retrieved)
+intro(file, scorecard)
 main()
-
-# if __name__ == "__main__":
-    # intro(scores_file)
-    # hangman_game()
-    # outcome(scores_file, chances, losses, wins)
