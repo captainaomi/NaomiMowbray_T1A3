@@ -42,7 +42,8 @@ def intro(file, scorecard):
                 break
 
         if not return_player:
-            new_player = {"Player Name": name, "Total Wins": wins, "Total Losses": losses}
+            new_player = {"Player Name": name,
+                          "Total Wins": wins, "Total Losses": losses}
             scorecard.append(new_player)
 
         with open(file, "w", newline="") as scores:
@@ -52,11 +53,12 @@ def intro(file, scorecard):
 
 
 def choose_mystery_word():
+    # These were used while building/testing the terminal application:
     # potential_words = [
     #     "hello",
     #     "bye",
     #     "lamp",
-    # ] # These were used while building and testing the teminal application
+    # ] 
      
     global mystery_word
     mystery_word = random.choice(potential_words).upper()

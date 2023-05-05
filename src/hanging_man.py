@@ -1,4 +1,4 @@
-from colored import fg, bg, attr
+from colored import bg, attr
 
 
 # Note: This does look quite repetitive, but that's on purpose!
@@ -16,7 +16,7 @@ hanging = {
       {bg(15)} |        {attr("reset")}
       {bg(15)} |_______ {attr("reset")}
       {bg(15)}          {attr("reset")}
-8 turns left, you've got this""",
+8 turns left, just breathe, you've got this.""",
 
    7: f"""
       {bg(227)} ________ {attr("reset")}
@@ -26,7 +26,7 @@ hanging = {
       {bg(227)} |        {attr("reset")}
       {bg(227)} |_______ {attr("reset")}
       {bg(227)}          {attr("reset")}
-7 turns left isn't terrible""",
+Okay well 7 turns remaining isn't terrible?""",
 
    6: f"""
       {bg(220)} ________ {attr("reset")}
@@ -36,7 +36,7 @@ hanging = {
       {bg(220)} |        {attr("reset")}
       {bg(220)} |_______ {attr("reset")}
       {bg(220)}          {attr("reset")}
-Wait, there's his head ... With 6 turns left""",
+Wait, there's his head ... With 6 guesses to go!""",
 
    5: f"""
       {bg(214)} ________ {attr("reset")}
@@ -46,7 +46,7 @@ Wait, there's his head ... With 6 turns left""",
       {bg(214)} |        {attr("reset")}
       {bg(214)} |_______ {attr("reset")}
       {bg(214)}          {attr("reset")}
-Yep, 5 turns left now""",
+Yep, 5 guesses left now...""",
    4: f"""
       {bg(208)} ________ {attr("reset")}
       {bg(208)} |   |    {attr("reset")}
@@ -55,7 +55,7 @@ Yep, 5 turns left now""",
       {bg(208)} |        {attr("reset")}
       {bg(208)} |_______ {attr("reset")}
       {bg(208)}          {attr("reset")}
-I think he's waving for help - 4 turns left""",
+I think he's waving for help - 4 more chances""",
 
    3: f"""
       {bg(196)} ________ {attr("reset")}
@@ -65,7 +65,7 @@ I think he's waving for help - 4 turns left""",
       {bg(196)} |        {attr("reset")}
       {bg(196)} |_______ {attr("reset")}
       {bg(196)}          {attr("reset")}
-DOWN TO THE LAST 3 TURNS""",
+EEEP, DANGER: DOWN TO 3 TURNS""",
 
    2: f"""
       {bg(88)} ________ {attr("reset")}
@@ -75,7 +75,7 @@ DOWN TO THE LAST 3 TURNS""",
       {bg(88)} |  /     {attr("reset")}
       {bg(88)} |_______ {attr("reset")}
       {bg(88)}          {attr("reset")}
-Come on, there's still hope for your last 2 turns""",
+Come on, there's still hope for your last 2 guesses!""",
 
    1: f"""
       {bg(52)} ________ {attr("reset")}
@@ -97,5 +97,3 @@ Ohhhhh gosh, this is your (and his!) last chance...""",
       {bg(0)}          {attr("reset")}
 Ba-bow, you lose (and so does our unfortunate man)."""
 }
-
-
