@@ -53,13 +53,16 @@ def intro(file, scorecard):
 
 
 def choose_mystery_word():
-    # These were used while building/testing the terminal application:
+    # For assignment reference only: 
+    # These are what I refer to in the test spreadsheet, as used
+    # throughout building and testing the application:
+
     # potential_words = [
     #     "hello",
     #     "bye",
     #     "lamp",
     # ] 
-     
+    
     global mystery_word
     mystery_word = random.choice(potential_words).upper()
     global word_letters
@@ -85,8 +88,10 @@ def hangman_game(mystery_word, word_letters):
         print("When you make a guess, it'll show here: ", " ".join(guessed))
         guess = input("What letter do you want to try? ").upper()
 
+        # The following if statement checks if our guess is still in the
+        # alphabet, minus the letters we've already guessed (i.e. what
+        # letters haven't we guessed yet?)
         if guess in letters - guessed: 
-        #ie. still in alphabet, minus the ones we've tried
             guessed.add(guess)
             if guess in word_letters:
                 word_letters.remove(guess)
