@@ -76,51 +76,64 @@ Different features include:
 ### - steps to install the application
 ### - any dependencies required by the application to operate
 ### - any system hardware requirements
-### - how to use any command line arguements made for the application
+### - how to use any command line arguments made for the application
+
 
 To play our Python Hangman game, there's a long list of commands and prompts and things we could do to eventually get your computer to let you play ... However, who chooses the long way on purpose?!
 
 I've created a couple of files that will do all it for you nice and simply - just follow the following steps:
 
+### Getting Your Computer Ready
+
 Firstly, you're gunna need a **computer** or a **laptop**, and an **integrated development environment** (or **IDE** for short), which is basically just a program that does fancy things with code that make you feel like you're in The Matrix! 
 
 I strongly recommend **Visual Studio Code**, which can be downloaded here: https://code.visualstudio.com
 
-First, we're going to check that you've got Python 3 installed - otherwise, you're going to have a hard time playing Python Hangman!
+Now, these instructions are based on **the average Mac user**, but they should still work if you're on Windows or Linux. If you do have any issues, please just contact me at *codernaomi@coderacademy.com.au* and my team or I will get to troubleshooting right away for you!
 
-I've got a file ready, you just need to be able to run it. Please type the following in your terminal to do so:
+Ready?
+
+Let's play!
+
+### Getting Your Game Ready
+
+For our **GitHub repository** (or the Matrix code that will let you play), click here: https://github.com/captainaomi/NaomiMowbray_T1A3
+
+You should see a little green button that says **Code** - click that, and click on **Download Zip**.
+
+Our Python Hangman game will now be in your Downloads, so double click the zip file **NaomiMowbray_T1A3-main** to unzip it ;)
+
+Back in **Visual Studio Code**, we're going to do the following:
+1. Click open folder
+2. Go to Downloads, and select **NaomiMowbray_T1A3-main** and **OPEN**!
+3. If Visual Studio Code asks you to trust me, click Yes - I promise I'm trustworthy
+
+Now, you might have to open the **terminal** to do our Matrix Code stuff, so if so, type `` ^ + ` ``, which will open that for you.
+
+First, we're going to check that you've got **Python 3** installed - otherwise, you're going to have a hard time playing our Python Hangman!
+
+I've got the file ready to check for you, so let's run it. Please type the following in your terminal to do so:
 
 ``` py
 chmod +x src/run_a.sh
 source src/run_a.sh
 ```
-If you get an `Oops!` message, click the link to upgrade or install Python 3, then come back and do this again.
+If you get an `Oops!` message, visit this link to upgrade or install Python 3: https://www.python.org/downloads/ 
+
+Once you've **Downloaded the latest version of Python 3**, simply close and reopen your Visual Studio Code program to ensure the update is correctly installed, and go back to the previous step to try this again.
 
 If you get a `You're good to go!` message, then you're good to go!
 
-Next, it's down to running our file and playing the game 😊
+That's pretty much it - all you have to do is run the file and guess the word to save the man 😊
 
-To do this, you can type the following in your terminal:
+To do this, type the following in your terminal:
 
 ``` py
 chmod +x src/run_b.sh
 source src/run_b.sh
 ```
 
-<!-- Now that it's created a nice little virtual environment for you to play in, you need to activate it (or 'move into' it). You can copy this text into the terminal:
-    `source src/hangman-venv/bin/activate`
-    `Enter`
-When you press 'enter', you should be able to see (hangman-venv) at the beginning of your command line/terminal prompt, and you'll know you're in the right place!
+### Game Rules
 
-To make sure you've got the right requirements for the game, once you're in the venv, you just have to type: 
-    `pip3 install -r src/requirements.txt` 
-    `Enter`
-and every requirement to run our Python Hangman game will be installed for you!
+Honestly, it's pretty simple and hopefully easy for everybody to follow along!
 
-
-When you're done playing, you just need to type in `'no'` at the prompt to continue or stop playing the game, and then `deactivate + Enter` to leave your venv and go about your life!
-
-Again, when those cravings kick in and you want to play again, just go back and type in:
-    `source src/hangman-venv/bin/activate`
-    `Enter`
-Note: you won't have to install the requirements again, because they're still stored in your virtual enviornment and will be waiting for you every time you come play! -->

@@ -23,14 +23,12 @@ try:
     with open(file, "r") as scores:
         reader = csv.DictReader(scores)
         scorecard = list(reader)
-    print("In try block")
 
 except FileNotFoundError:
     with open(file, "w", newline="") as scores:
         columns = ["Player Name", "Total Wins", "Total Losses"]
         writer = csv.DictWriter(scores, fieldnames=columns)
         writer.writeheader()
-    print("In except block")
 
 
 def intro(file, scorecard):
