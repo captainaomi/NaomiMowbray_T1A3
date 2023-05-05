@@ -88,7 +88,7 @@ I've got a file ready, you just need to be able to run it. Please type the follo
 
 ``` py
 chmod +x src/run_a.sh
-./src/run_a.sh
+source src/run_a.sh
 ```
 If you get an `Oops!` message, click the link to upgrade or install Python 3, then come back and do this again.
 
@@ -100,7 +100,7 @@ To do this, you can type the following in your terminal:
 
 ``` py
 chmod +x src/run_b.sh
-./src/run_b.sh
+source src/run_b.sh
 ```
 
 <!-- Now that it's created a nice little virtual environment for you to play in, you need to activate it (or 'move into' it). You can copy this text into the terminal:

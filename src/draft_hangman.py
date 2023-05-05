@@ -62,23 +62,6 @@ def intro(file, scorecard):
             columns = ["Player Name", "Total Wins", "Total Losses"]
             writer = csv.DictWriter(scores, fieldnames=columns)
             writer.writerows(scorecard)
-    
-        #     print(row.keys())
-        # writer = csv.DictWriter(scores, fieldnames = columns)
-        # writer.writeheader()
-        # writer.writerow({"Player Name": name, "Total Wins": wins, "Total Losses": losses})
-        # for row in scorecard:
-        #     print(row)
-        # print(scorecard.keys())
-            # if (name == row[name]):
-            #     writer.writerow({"Player Name": name, "Total Wins": wins, "Total Losses": losses})
-            # else:
-            #     scores.close()
-
-        # for row in scorecard:
-        #     if (name != row[0]):
-        #     else:
-        #         scores.close()
 
 
 def choose_mystery_word():
@@ -156,8 +139,8 @@ def outcome(chances, losses, wins):
         with open(file, "w", newline="") as scores:
             columns = ["Player Name", "Total Wins", "Total Losses"]
             writer = csv.DictWriter(scores, fieldnames=columns)
+            writer.writeheader()
             writer.writerows(scorecard)
-        print(f"You have {losses} losses and {wins} wins. Good game, {name}!")
     
     else: # You won!
         with open(file, "r") as scores:
@@ -173,8 +156,6 @@ def outcome(chances, losses, wins):
             writer = csv.DictWriter(scores, fieldnames=columns)
             writer.writeheader()
             writer.writerows(scorecard)
-        print(f"You have {losses} losses and {wins} wins. Well done, {name}!")
-
 
 
 def main():
