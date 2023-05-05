@@ -156,3 +156,13 @@ So go ahead, try your first letter, and hit **Enter**!
 Let's say you went with `a`.
 
 The word will now show as `_ _ A _ A `
+
+Have a play, and figure out what happens if you win, lose, make an 'invalid' guess, and have fun!
+
+### Viewing Everyone's Score Tallys
+
+You'll be able to track everyone's scores, including the **Player Name**, their **Total Wins** and **Total Losses** in the file called **scores.csv**. You can either view this through Visual Studio Code, by clicking on the file called **scores.csv** under the **src folder** on the **Explorer Panel**, or by opening the file straight from the original file we unzipped to make this all happen! 
+
+If you don't remember where that is, that's okay. You can find on your computer at **Downloads**, then **NaomiMowbray_T1A3-main**, then go into the folder called **src** and you should see **scores.csv** there 😊
+
+### Have fun and enjoy saving the day with my Python Hangman game!
