@@ -78,9 +78,13 @@ Different features include:
 ### - any system hardware requirements
 ### - how to use any command line arguements made for the application
 
-There's a long version, and there's a short version of how to play this game on your computer! 
+To play our Python Hangman game, there's a long list of commands and prompts and things we could do to eventually get your computer to let you play ... However, who chooses the long way on purpose?!
 
-To make things nice and simple, instead of making you type a whole lot of commands in your terminal, I've created a couple of files that will do it for you!
+I've created a couple of files that will do all it for you nice and simply - just follow the following steps:
+
+Firstly, you're gunna need a **computer** or a **laptop**, and an **integrated development environment** (or **IDE** for short), which is basically just a program that does fancy things with code that make you feel like you're in The Matrix! 
+
+I strongly recommend **Visual Studio Code**, which can be downloaded here: https://code.visualstudio.com
 
 First, we're going to check that you've got Python 3 installed - otherwise, you're going to have a hard time playing Python Hangman!
 
