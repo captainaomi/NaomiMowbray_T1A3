@@ -80,7 +80,7 @@ hanging = {
    1: f"""
       {bg(52)} ________ {attr("reset")}
       {bg(52)} |   |    {attr("reset")}
-      {bg(52)} |   o/   {attr("reset")}
+      {bg(52)} |  \o/   {attr("reset")}
       {bg(52)} |   |    {attr("reset")}
       {bg(52)} |  / \   {attr("reset")}
       {bg(52)} |_______ {attr("reset")}

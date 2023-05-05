@@ -137,3 +137,22 @@ source src/run_b.sh
 
 Honestly, it's pretty simple and hopefully easy for everybody to follow along!
 
+You'll be playing in the terminal, so keep your attention there. 
+
+And just so we're clear, when I say I want you to **type something**, I mean type it in to the terminal where the questions are - everything you type will need to be in there for the computer to know what you're telling it!
+
+You'll be asked your name - it's kind of a friendly game (except for the poor man whose life is at stake!). Type in your **name** and hit **Enter**.
+
+*Note: make sure you type your name exactly the same every time you play - this means being careful with captial letters too! - and your scores will be saved foor you to compete with anyone else on your computer, so just to keep track of your own scores.*
+
+You'll have to give a **yes or no** for if you want to play or not, so go ahead and type `y` or `n` and hit **Enter**.
+
+The game wants to help you! You can see how many letters are in the mystery word by the underscores. For example, if our word was `llama`, we'd see `_ _ _ _ _ `. 
+
+Also, when you guess different letters, they'll show up there too as little reminders for you to refer to if you need it.
+
+So go ahead, try your first letter, and hit **Enter**!
+
+Let's say you went with `a`.
+
+The word will now show as `_ _ A _ A `
