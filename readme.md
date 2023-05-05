@@ -2,7 +2,7 @@
 
 ### R3 Provide full attribution to referenced sources (where applicable)
 
-The beautiful 5,000 long list of words I utilised for my Python Hangman game can be found here: https://www.randomlists.com/data/words.json
+The beautiful long list of ~2,400 words that I utilised for my Python Hangman game can be found here: https://www.randomlists.com/data/words.json
 <br>
 
 ### R4 Provide a link to your source control repository

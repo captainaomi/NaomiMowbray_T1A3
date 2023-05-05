@@ -1,8 +1,12 @@
+# For assignment reference only: 
+# These are what I refer to in the test spreadsheet, as used
+# throughout building and testing the application:
+
 # potential_words = [
 #     "hello",
 #     "bye",
 #     "lamp",
-#   ] # These were used while building and testing the teminal application
+#   ] 
 
 potential_words = [
     "aback",

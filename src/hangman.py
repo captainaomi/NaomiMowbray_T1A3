@@ -1,8 +1,8 @@
 import csv
 import random
 import emoji
-from colored import fg, bg, attr
-from hanging_man import hanging
+from colored import fg, attr
+from picture import hanging
 from words import potential_words
 
 file = "src/scores.csv"
