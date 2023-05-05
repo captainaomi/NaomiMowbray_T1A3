@@ -1,24 +1,23 @@
 # Naomi Mowbray T1A3 - Terminal Application
 
-## R3 Provide full attribution to referenced sources (where applicable)
+### R3 Provide full attribution to referenced sources (where applicable)
 
 The beautiful 5,000 long list of words I utilised for my Python Hangman game can be found here: https://www.randomlists.com/data/words.json
 <br>
 
-## R4 Provide a link to your source control repository
+### R4 Provide a link to your source control repository
 
 For the **GitHub repository**, you can click here: https://github.com/captainaomi/NaomiMowbray_T1A3
-
 <br>
 
-## R5 Identify any code style guide or styling conventions that the application will adhere to. 
-## Reference the chosen style guide appropriately.
+### R5 Identify any code style guide or styling conventions that the application will adhere to. 
+### Reference the chosen style guide appropriately.
 
 PEP 8 is the typical style guide for Python Code, and simply works towards ensuring there's consistency across everyone's Python Code. 
 
 Different things that I had to be careful of and learn to be congruent with included points such as:
 
-- Limit all lines to a maximum of 79 characters, but for flowing long blocks of text with fewer structural restrictions (docstrings or comments), the line length should be limited to 72 characters
+- Limit all lines to a maximum of 79 characters, but for flowing long blocks of text with fewer structural restrictions (docstrings or comments), the line length should be limited to 72 characters - this took me a while and some serious back and forth with an online character counter!
 
 - Surround top-level function and class definitions with two blank lines, but Method definitions inside a class are surrounded by a single blank line
 
@@ -28,18 +27,19 @@ Different things that I had to be careful of and learn to be congruent with incl
     3. local application/library specific imports
 
 You can find *Kenneth Reitz'* PEP 8 style guide here: https://pep8.org/
-
+And, if you ever need one, the character counter I used was from: https://wordcounter.net/character-count
 <br>
 
-## R6 Develop a list of features that will be included in the application. It must include:
-### - at least three features
-### - describe each feature
-## Note: Ensure that your features above allow you to demonstrate your understanding of the following language elements and concepts: 
-### - use of variables and the concept of variable scope
-### - loops and conditional control structures
-### - error handling
-        
-Python Hangman!
+### R6 Develop a list of features that will be included in the application. It must include:
+#### - at least three features
+#### - describe each feature
+### Note: Ensure that your features above allow you to demonstrate your understanding of the following language elements and concepts: 
+#### - use of variables and the concept of variable scope
+#### - loops and conditional control structures
+#### - error handling
+<br> 
+
+**My application is the good old hangman game ... aka Python Hangman!**
 
 Different features include:
 - Give your name, and choose to play my Python version of Hangman
@@ -59,17 +59,61 @@ Different features include:
 - Colours and a few sassy comments scattered throughout game to keep you entertained
     - The colours will be utilised for our mystery word and for the hanging man pictures, getting closer and closer to a black out when/if he dies
     - The choice of colours from white through to red and then black are similar to Australia's fire danger chart... Red's bad, but black's catastrophic!
-`
 <br>
 
-    ## R7 Develop an implementation plan which:
-    ### - outlines how each feature will be implemented and a checklist of tasks for each feature
-    ### - prioritise the implementation of different features, or checklist items within a feature
-    ### - provide a dealine, duration or other time indicator for each feature or checklist/checklist item
-    ## Utilise a suitable project management platform to track this implementation plan
-    ## Provide screnshots/images and/or a reference to an accessible project management platform used to track this implementation plan
-    ## > Your checklists for each feature should have at least five items
-    <br>
+### R7 Develop an implementation plan which:
+#### - outlines how each feature will be implemented and a checklist of tasks for each feature
+#### - prioritise the implementation of different features, or checklist items within a feature
+#### - provide a dealine, duration or other time indicator for each feature or checklist/checklist item
+### Utilise a suitable project management platform to track this implementation plan
+### Provide screnshots/images and/or a reference to an accessible project management platform used to track this implementation plan
+### > Your checklists for each feature should have at least five items
+<br>
+This was a bit tricky to show in a readme file, so I've just taken a heap of screenshots from the board I created and used.
+
+I tried trello super quick, didn't like it at all, and settled with the functions at https://www.monday.com
+
+I had some trial and error with titles, and how I wanted it to look to make sense in my brain, but ended up settling on breaking it up into four sections:
+
+- Hangman Game Features
+- Other Code Related Things
+- ReadMe
+- Slide Deck and Presentation
+
+Started off with a heck of a lot of red and black colours and it seemed a bit overwhelming... 
+
+![code features 1a](docs/features_1a.png)
+
+But by starting with the basics that I knew I could nail, for example name input, choosing a mystery word each time etc, I quickly got some happy blue colours:
+
+![code features 1b](docs/features_1b.png)
+
+And then I just progressed from there similarly. From this:
+
+![code features 2a](docs/features_2a.png)
+
+into this:
+
+![code features 2b](docs/features_2b.png)
+
+I would say hands down the hardest colours to change where the scorecard parts:
+
+![code features 3a](docs/features_3a.png)
+
+buuuuuuuut I GOT THERE!
+
+![code features 3b](docs/features_3b.png)
+
+And then I inclded the readme file and slides, because I feel like they were part of this whole implmentation plan too 😉
+
+![readme and slides 1a](docs/readme_1a.png)
+
+Which fiiiiinally became this:
+
+![readme and slides 1b](docs/readme_1b.png)
+
+Hooray!
+<br>
 
 ### R8 Design help documentation which includes a set of instructions which accurately describe how to use and install the application
 ### You must include:
@@ -200,4 +244,4 @@ If you don't remember where that is, that's okay.
 
 You should be able to find it on your computer at **Downloads**, then **NaomiMowbray_T1A3-main**, then go into the folder called **src**, and you'll see **scores.csv** there 😊
 
-### Have fun and enjoy saving the day with my Python Hangman game!
+### Have fun and enjoy saving the man with my Python Hangman game!
