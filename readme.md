@@ -104,7 +104,13 @@ buuuuuuuut I GOT THERE!
 
 ![code features 3b](docs/features_3b.png)
 
-And then I inclded the readme file and slides, because I feel like they were part of this whole implmentation plan too 😉
+The process of being able to troubleshoot, debug, figure out what correct code was needed where etc was a nightmare. 
+
+In the end, most of my testing was hours and hours worth of trial and error, and I've got it mapped out on a spreadsheet here as below:
+
+![testing spreadsheet](docs/test_spreadsheet.png)
+
+With the project management board, I also inclded the readme file and slides, because I feel like they were part of this whole implmentation plan too 😉
 
 ![readme and slides 1a](docs/readme_1a.png)
 
