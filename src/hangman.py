@@ -7,6 +7,7 @@ from colored import fg, attr
 from picture import hanging
 from words import potential_words
 
+
 file = "src/scores.csv"
 scorecard = ""
 
@@ -137,7 +138,7 @@ def outcome(chances, losses, wins):
             writer.writeheader()
             writer.writerows(scorecard)
     
-    else: # You won!
+    else:  # You won!
         with open(file, "r") as scores:
             reader = csv.DictReader(scores)
             scorecard = list(reader)

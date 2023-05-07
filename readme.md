@@ -100,7 +100,11 @@ I would say hands down the hardest colours to change where the scorecard parts:
 
 ![code features 3a](docs/features_3a.png)
 
-buuuuuuuut I GOT THERE!
+and one of the most satisfying parts of the project management board was seeing this notification pop up when I checked something off:
+
+![updated](docs/updated.png)
+
+annnnnnnd I GOT THERE!
 
 ![code features 3b](docs/features_3b.png)
 
@@ -128,7 +132,8 @@ Hooray!
 #### - any system hardware requirements
 #### - how to use any command line arguments made for the application
 <br>
-## Python Hangman Help 
+## Python Hangman Help and Installation Instructions
+
 To play our Python Hangman game, there's a long list of commands and prompts and things we could do to eventually get your computer to let you play ... However, who chooses the long way on purpose?!
 
 I've created a couple of files that will do all it for you nice and simply - just follow the following steps:
@@ -250,4 +255,9 @@ If you don't remember where that is, that's okay.
 
 You should be able to find it on your computer at **Downloads**, then **NaomiMowbray_T1A3-main**, then go into the folder called **src**, and you'll see **scores.csv** there 😊
 
-### Have fun and enjoy saving the man with my Python Hangman game!
+#### Have fun and enjoy saving the man with my Python Hangman game!
+<br>
+
+### R9 - R10 An overview of your Terminal application and code 
+
+My **video presentation** of the **Slide Deck** can be found at: https://youtu.be/Wj0i3HZLl00
